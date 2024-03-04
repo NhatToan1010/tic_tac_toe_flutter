@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tic_tac_toe/src/features/home/screen/Home.dart';
 import 'package:tic_tac_toe/src/utils/themes/theme.dart';
 
 void main() {
@@ -15,18 +16,8 @@ class MyApp extends StatelessWidget {
       theme: MyTheme.lightTheme,
       darkTheme: MyTheme.darkTheme,
       themeMode: ThemeMode.system,
-      home: const Hello(),
+      home: const HomeScreen(),
       debugShowCheckedModeBanner: false,
-    );
-  }
-}
-class Hello extends StatelessWidget {
-  const Hello({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(child: Text("Hello"),),
     );
   }
 }
