@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tic_tac_toe/src/constants/colors.dart';
+import 'package:tic_tac_toe/src/constants/sizes.dart';
 
 class MyTextTheme {
   static TextTheme lightTextTheme = TextTheme(
@@ -41,9 +42,10 @@ class MyTextTheme {
     headlineMedium: GoogleFonts.anonymousPro(
         fontWeight: FontWeight.bold,
         color: lightColor700),
-    headlineLarge: GoogleFonts.anonymousPro(
+    headlineLarge: GoogleFonts.pacifico(
         fontWeight: FontWeight.bold,
-        color: lightColor700),
+        color: lightColor700,
+        fontSize: headingLargeSize),
     // *--- Title ---*
     titleSmall: GoogleFonts.anonymousPro(
         fontWeight: FontWeight.bold,

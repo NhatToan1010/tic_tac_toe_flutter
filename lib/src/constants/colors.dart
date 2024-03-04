@@ -9,6 +9,10 @@ const lightColor700 = Color(0xFFFAFAFA);
 const darkColor500 = Color(0xFF242424);
 
 // === Widget Colors ===
-const crossWidgetColor = Colors.blueAccent;
-const circleWidgetColor = Colors.redAccent;
+const crossWidgetColor = Colors.redAccent;
+const circleWidgetColor = Colors.blueAccent;
 const borderColor = Colors.grey;
+const mainButtonColor = Color(0xFF2DB4FF);
+
+// === Screen Colors ===
+const primaryBackgroundColor = Color(0xFFEFF9FF);
