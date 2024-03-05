@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -27,7 +26,6 @@ class GameModeSelectionWidget extends StatelessWidget {
 
 class _GameButtonWidget extends StatelessWidget {
   const _GameButtonWidget({
-    super.key,
     required this.txtTheme,
     required this.label,
     required this.icon
