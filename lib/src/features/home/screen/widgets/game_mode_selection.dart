@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
+import 'package:tic_tac_toe/src/features/game/screen/game.dart';
 
 import '../../../../constants/colors.dart';
 import '../../../../constants/strings.dart';
@@ -17,8 +19,18 @@ class GameModeSelectionWidget extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        _GameButtonWidget(txtTheme: txtTheme, label: txtPve, icon: FontAwesomeIcons.robot,),
-        _GameButtonWidget(txtTheme: txtTheme, label: txtPvp, icon: FontAwesomeIcons.peopleCarryBox,),
+        _GameButtonWidget(
+          onPressed: () => Get.to(() => const GameScreen()), // Need to change Function
+          txtTheme: txtTheme,
+          label: txtPve,
+          icon: FontAwesomeIcons.robot,
+        ),
+        _GameButtonWidget(
+          onPressed: () {}, // Need to add Function
+          txtTheme: txtTheme,
+          label: txtPvp,
+          icon: FontAwesomeIcons.peopleCarryBox,
+        ),
       ],
     );
   }
@@ -26,19 +38,22 @@ class GameModeSelectionWidget extends StatelessWidget {
 
 class _GameButtonWidget extends StatelessWidget {
   const _GameButtonWidget({
+    Key? key,
     required this.txtTheme,
     required this.label,
-    required this.icon
-  });
+    required this.icon,
+    required this.onPressed,
+  }) : super(key: key);
 
   final TextTheme txtTheme;
   final String label;
   final IconData icon;
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-        onPressed: () {},
+        onPressed: onPressed,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -46,11 +61,9 @@ class _GameButtonWidget extends StatelessWidget {
             FaIcon(size: 40.0, icon),
             Text(
               label,
-              style: txtTheme.titleSmall
-                  ?.apply(color: lightColor700),
+              style: txtTheme.titleSmall?.apply(color: lightColor700),
             )
           ],
-        )
-    );
+        ));
   }
 }
