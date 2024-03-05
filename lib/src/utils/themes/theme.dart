@@ -7,7 +7,8 @@ class MyTheme {
     brightness: Brightness.light,
     primarySwatch: Colors.blue,
     textTheme: MyTextTheme.lightTextTheme,
-    elevatedButtonTheme: MyButtonTheme.lightButtonTheme
+    elevatedButtonTheme: MyButtonTheme.lightButtonTheme,
+    iconButtonTheme: MyButtonTheme.lightIconButtonTheme,
   );
 
   static ThemeData darkTheme = ThemeData(
