@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tic_tac_toe/src/utils/themes/widget_themes/buttonThemes.dart';
 import 'package:tic_tac_toe/src/utils/themes/widget_themes/textThemes.dart';
 
 class MyTheme {
@@ -6,6 +7,7 @@ class MyTheme {
     brightness: Brightness.light,
     primarySwatch: Colors.blue,
     textTheme: MyTextTheme.lightTextTheme,
+    elevatedButtonTheme: MyButtonTheme.lightButtonTheme
   );
 
   static ThemeData darkTheme = ThemeData(
