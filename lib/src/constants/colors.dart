@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 // === Light Colors ===
@@ -16,3 +14,6 @@ const mainButtonColor = Color(0xFF2DB4FF);
 
 // === Screen Colors ===
 const primaryBackgroundColor = Color(0xFFEFF9FF);
+
+// === Util Colors ===
+const primaryGrey = Colors.grey;
