@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:tic_tac_toe/src/constants/colors.dart';
 
 class BoardGameWidget extends StatelessWidget {
