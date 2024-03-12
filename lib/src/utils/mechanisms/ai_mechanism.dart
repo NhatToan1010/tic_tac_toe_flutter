@@ -6,24 +6,30 @@ class AiMechanism {
   static const LOSE_SCORE = -100;
   static const int INFINITY = 9999999;
 
-  Move _getAIMove (List<int> currentBoard, int currentPlayer) {
-    List<int> newBoard;
-    Move bestMove = Move(move: -INFINITY, score: -1);
-
-    for (int currentMove = 0; currentMove < currentBoard.length; currentMove++) {
-      if (!GameMechanism.isValidMove(currentBoard, currentMove)) continue;
-      newBoard = List.from(currentBoard);
-      newBoard[currentMove] = currentPlayer;
-      int newScore = - _getBestScore(newBoard, _togglePlayer(currentPlayer));
-      if (newScore > bestMove.score) {
-        bestMove.score = newScore;
-        bestMove.move = currentMove;
-      }
-    }
-    return bestMove;
+  int play (List<int> currentBoard, int currentPlayer) {
+    return _getAIMove(currentBoard, currentPlayer).move;
   }
 
- int _getBestScore(List<int> board, int currentPlayer) {
+  Move _getAIMove(List<int> currentBoard, int currentPlayer) {
+    List<int> _newBoard;
+    Move _bestMove = Move(move: -INFINITY, score: -1);
+
+    for (int currentMove = 0;
+        currentMove < currentBoard.length;
+        currentMove++) {
+      if (!GameMechanism.isValidMove(currentBoard, currentMove)) continue;
+      _newBoard = List.from(currentBoard);
+      _newBoard[currentMove] = currentPlayer;
+      int newScore = -_getBestScore(_newBoard, _togglePlayer(currentPlayer));
+      if (newScore > _bestMove.score) {
+        _bestMove.score = newScore;
+        _bestMove.move = currentMove;
+      }
+    }
+    return _bestMove;
+  }
+
+  int _getBestScore(List<int> board, int currentPlayer) {
     int winner = GameMechanism.checkIfWinnerFound(board);
     if (winner == currentPlayer) {
       return WIN_SCORE;
@@ -33,9 +39,10 @@ class AiMechanism {
       return DRAW_SCORE;
     }
     return _getAIMove(board, currentPlayer).score;
- }
+  }
 
- int _togglePlayer(int currentPlayer) => GameMechanism.togglePlayer(currentPlayer);
+  int _togglePlayer(int currentPlayer) =>
+      GameMechanism.togglePlayer(currentPlayer);
 }
 
 class Move {

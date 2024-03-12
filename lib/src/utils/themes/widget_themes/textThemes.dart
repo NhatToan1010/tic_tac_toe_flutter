@@ -1,65 +1,52 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tic_tac_toe/src/constants/colors.dart';
+import 'package:tic_tac_toe/src/constants/sizes.dart';
 
 class MyTextTheme {
   static TextTheme lightTextTheme = TextTheme(
     // *--- Headline ---*
     headlineSmall: GoogleFonts.anonymousPro(
-        fontWeight: FontWeight.bold,
-        color: darkColor500),
+        fontWeight: FontWeight.bold, color: darkColor500),
     headlineMedium: GoogleFonts.anonymousPro(
-        fontWeight: FontWeight.bold,
-        color: darkColor500),
+        fontWeight: FontWeight.bold, color: darkColor500),
     headlineLarge: GoogleFonts.anonymousPro(
         fontWeight: FontWeight.bold,
-        color: darkColor500),
+        color: darkColor500,
+        fontSize: headingLargeSize),
     // *--- Title ---*
     titleSmall: GoogleFonts.anonymousPro(
-        fontWeight: FontWeight.bold,
-        color: darkColor500),
+        fontWeight: FontWeight.bold, color: darkColor500),
     titleMedium: GoogleFonts.anonymousPro(
-        fontWeight: FontWeight.bold,
-        color: darkColor500),
+        fontWeight: FontWeight.bold, color: darkColor500),
     titleLarge: GoogleFonts.anonymousPro(
-        fontWeight: FontWeight.bold,
-        color: darkColor500),
+        fontWeight: FontWeight.bold, color: darkColor500),
     // *--- Body ---*
-    bodySmall: GoogleFonts.anonymousPro(
-        color: darkColor500),
-    bodyMedium: GoogleFonts.anonymousPro(
-        color: darkColor500),
-    bodyLarge: GoogleFonts.anonymousPro(
-        color: darkColor500),
+    bodySmall: GoogleFonts.anonymousPro(color: darkColor500),
+    bodyMedium: GoogleFonts.anonymousPro(color: darkColor500),
+    bodyLarge: GoogleFonts.anonymousPro(color: darkColor500),
   );
 
   static TextTheme darkTextTheme = TextTheme(
     // *--- Headline ---*
     headlineSmall: GoogleFonts.anonymousPro(
-        fontWeight: FontWeight.bold,
-        color: lightColor700),
+        fontWeight: FontWeight.bold, color: lightColor700),
     headlineMedium: GoogleFonts.anonymousPro(
+        fontWeight: FontWeight.bold, color: lightColor700),
+    headlineLarge: GoogleFonts.pacifico(
         fontWeight: FontWeight.bold,
-        color: lightColor700),
-    headlineLarge: GoogleFonts.anonymousPro(
-        fontWeight: FontWeight.bold,
-        color: lightColor700),
+        color: lightColor700,
+        fontSize: headingLargeSize),
     // *--- Title ---*
     titleSmall: GoogleFonts.anonymousPro(
-        fontWeight: FontWeight.bold,
-        color: lightColor700),
+        fontWeight: FontWeight.bold, color: lightColor700),
     titleMedium: GoogleFonts.anonymousPro(
-        fontWeight: FontWeight.bold,
-        color: lightColor700),
+        fontWeight: FontWeight.bold, color: lightColor700),
     titleLarge: GoogleFonts.anonymousPro(
-        fontWeight: FontWeight.bold,
-        color: lightColor700),
+        fontWeight: FontWeight.bold, color: lightColor700),
     // *--- Body ---*
-    bodySmall: GoogleFonts.anonymousPro(
-        color: lightColor700),
-    bodyMedium: GoogleFonts.anonymousPro(
-        color: lightColor700),
-    bodyLarge: GoogleFonts.anonymousPro(
-        color: lightColor700),
+    bodySmall: GoogleFonts.anonymousPro(color: lightColor700),
+    bodyMedium: GoogleFonts.anonymousPro(color: lightColor700),
+    bodyLarge: GoogleFonts.anonymousPro(color: lightColor700),
   );
 }
