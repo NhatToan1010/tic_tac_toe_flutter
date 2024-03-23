@@ -13,17 +13,19 @@ class GameMechanism {
     [1, 4, 7],
     [2, 5, 8],
     [0, 4, 8], // Cross Win Condition
-    [2, 4, 6]
+    [2, 4, 6],
   ];
 
-  static int togglePlayer(int currentPlayer) => -1 * currentPlayer;
+  static int togglePlayer(int currentPlayer) {
+    return currentPlayer * -1;
+  }
 
   static bool isValidMove(List<int> currentBoard, int index) =>
       currentBoard[index] == NOT_WINNER_YET;
 
   static bool isBoardFull(List<int> currentBoard) {
     for (var index in currentBoard) {
-      if (currentBoard[index] == NOT_WINNER_YET) return false;
+      if (index == NOT_WINNER_YET) return false;
     }
     return true;
   }
