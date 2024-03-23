@@ -1,5 +1,4 @@
 import 'dart:typed_data';
-import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:tic_tac_toe/src/constants/strings.dart';
