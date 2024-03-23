@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:tic_tac_toe/src/features/game/controller/controller.dart';
 import 'package:tic_tac_toe/src/features/game/screen/game.dart';
 
 import '../../../../constants/colors.dart';
 import '../../../../constants/strings.dart';
 
-class GameModeSelectionWidget extends StatelessWidget {
+class GameModeSelectionWidget extends GetWidget<GameController> {
   const GameModeSelectionWidget({
     super.key,
     required this.txtTheme,
@@ -20,13 +21,17 @@ class GameModeSelectionWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         _GameButtonWidget(
-          onPressed: () => Get.to(() => const GameScreen()), // Need to change Function
+          onPressed: () {
+            Get.to(() => const GameScreen(),
+                binding: GameBinding(isMultiplayer: false));
+          },
           txtTheme: txtTheme,
           label: txtPve,
           icon: FontAwesomeIcons.robot,
         ),
         _GameButtonWidget(
-          onPressed: () {}, // Need to add Function
+          onPressed: () =>
+              Get.to(const GameScreen(), binding: GameBinding(isMultiplayer: true)),
           txtTheme: txtTheme,
           label: txtPvp,
           icon: FontAwesomeIcons.peopleCarryBox,

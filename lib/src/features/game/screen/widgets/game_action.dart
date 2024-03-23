@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:tic_tac_toe/src/features/game/controller/controller.dart';
 
 
-class GameActionWidget extends StatelessWidget {
+class GameActionWidget extends GetWidget<GameController> {
   const GameActionWidget({
     super.key,
   });
@@ -16,7 +17,7 @@ class GameActionWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           _GameActionWidget(
-            onPressed: () {}, // Need to add Function
+            onPressed: () => controller.reinitialize(), // Need to add Function
             icon: Icons.refresh,
           ),
           _GameActionWidget(

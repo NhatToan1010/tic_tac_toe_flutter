@@ -12,7 +12,7 @@ class AiMechanism {
 
   Move _getAIMove(List<int> currentBoard, int currentPlayer) {
     List<int> _newBoard;
-    Move _bestMove = Move(move: -INFINITY, score: -1);
+    Move _bestMove = Move(move: -1, score: -INFINITY);
 
     for (int currentMove = 0;
         currentMove < currentBoard.length;
@@ -20,9 +20,9 @@ class AiMechanism {
       if (!GameMechanism.isValidMove(currentBoard, currentMove)) continue;
       _newBoard = List.from(currentBoard);
       _newBoard[currentMove] = currentPlayer;
-      int newScore = -_getBestScore(_newBoard, _togglePlayer(currentPlayer));
-      if (newScore > _bestMove.score) {
-        _bestMove.score = newScore;
+      int _newScore = -_getBestScore(_newBoard, GameMechanism.togglePlayer(currentPlayer));
+      if (_newScore > _bestMove.score) {
+        _bestMove.score = _newScore;
         _bestMove.move = currentMove;
       }
     }
@@ -30,24 +30,21 @@ class AiMechanism {
   }
 
   int _getBestScore(List<int> board, int currentPlayer) {
-    int winner = GameMechanism.checkIfWinnerFound(board);
+    final winner = GameMechanism.checkIfWinnerFound(board);
     if (winner == currentPlayer) {
       return WIN_SCORE;
-    } else if (winner == _togglePlayer(currentPlayer)) {
+    } else if (winner == GameMechanism.togglePlayer(currentPlayer)) {
       return LOSE_SCORE;
     } else if (winner == GameMechanism.DRAW) {
       return DRAW_SCORE;
     }
     return _getAIMove(board, currentPlayer).score;
   }
-
-  int _togglePlayer(int currentPlayer) =>
-      GameMechanism.togglePlayer(currentPlayer);
 }
 
 class Move {
-  late final int move;
-  late final int score;
+  int move;
+  int score;
 
   Move({required this.move, required this.score});
 }
