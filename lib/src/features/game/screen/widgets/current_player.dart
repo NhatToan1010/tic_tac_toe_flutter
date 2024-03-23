@@ -20,7 +20,7 @@ class CurrentPlayer extends GetWidget<GameController> {
         ),
         const SizedBox(height: 5.0),
         Obx(() => Text(
-              controller.currenCtPlayerMove ?? "",
+              controller.currentPlayerMove ?? "",
               style:
                   const TextStyle(fontSize: 10.0, fontWeight: FontWeight.bold),
             ))
