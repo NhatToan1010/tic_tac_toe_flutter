@@ -40,9 +40,6 @@ class AiMechanism {
     }
     return _getAIMove(board, currentPlayer).score;
   }
-
-  int _togglePlayer(int currentPlayer) =>
-      GameMechanism.togglePlayer(currentPlayer);
 }
 
 class Move {
