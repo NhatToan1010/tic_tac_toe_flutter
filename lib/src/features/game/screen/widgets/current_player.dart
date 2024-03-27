@@ -14,15 +14,15 @@ class CurrentPlayer extends GetWidget<GameController> {
     return Column(
       children: [
         SizedBox(
-          height: 15.0,
-          width: 15.0,
+          height: 30.0,
+          width: 30.0,
           child: Obx(() => _getPlayerSymbol(controller.currentPlayer.value)),
         ),
-        const SizedBox(height: 5.0),
+        const SizedBox(height: 10.0),
         Obx(() => Text(
               controller.currentPlayerMove ?? "",
               style:
-                  const TextStyle(fontSize: 10.0, fontWeight: FontWeight.bold),
+                  const TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
             ))
       ],
     );
@@ -32,14 +32,14 @@ class CurrentPlayer extends GetWidget<GameController> {
     switch (playerId) {
       case GameMechanism.player1:
         return const CrossWidget(
-          strokeWidth: 6.0,
+          strokeWidth: 10.0,
         );
       case GameMechanism.player2:
         return const CircleWidget(
-          strokeWidth: 6.0,
+          strokeWidth: 10.0,
         );
       default:
-        throw ArgumentError("Unknow playerId");
+        throw ArgumentError("Unknown playerId");
     }
   }
 }
