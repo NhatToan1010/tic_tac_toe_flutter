@@ -27,17 +27,19 @@ class GameScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final txtTheme = Theme.of(context).textTheme;
     final size = MediaQuery.of(context).size;
-    return Scaffold(
-      body: Container(
-        color: primaryBackgroundColor,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            GameStatusWidget(txtTheme: txtTheme),
-            BoardGameWidget(size: size.width * 0.7),
-            const CurrentPlayer(),
-            const GameActionWidget()
-          ],
+    return SafeArea(
+      child: Scaffold(
+        body: Container(
+          color: primaryBackgroundColor,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              GameStatusWidget(txtTheme: txtTheme),
+              BoardGameWidget(size: size.width * 0.8),
+              const CurrentPlayer(),
+              const GameActionWidget()
+            ],
+          ),
         ),
       ),
     );

@@ -11,20 +11,22 @@ class HomeScreen extends StatelessWidget {
     final txtTheme = Theme.of(context).textTheme;
     final size = MediaQuery.of(context).size;
 
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: Container(
-          width: size.width,
-          height: size.height,
-          color: primaryBackgroundColor,
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              TitleWidget(txtTheme: txtTheme),
-              GameModeSelectionWidget(txtTheme: txtTheme)
-            ],
+    return SafeArea(
+      child: Scaffold(
+        body: SingleChildScrollView(
+          child: Container(
+            width: size.width,
+            height: size.height,
+            color: primaryBackgroundColor,
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                TitleWidget(txtTheme: txtTheme),
+                GameModeSelectionWidget(txtTheme: txtTheme)
+              ],
+            ),
           ),
         ),
       ),
