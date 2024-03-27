@@ -16,7 +16,9 @@ class MyTextTheme {
         fontSize: headingLargeSize),
     // *--- Title ---*
     titleSmall: GoogleFonts.anonymousPro(
-        fontWeight: FontWeight.bold, color: darkColor500),
+        fontWeight: FontWeight.bold,
+        color: darkColor500,
+        fontSize: titleSmallSize),
     titleMedium: GoogleFonts.anonymousPro(
         fontWeight: FontWeight.bold, color: darkColor500),
     titleLarge: GoogleFonts.anonymousPro(
