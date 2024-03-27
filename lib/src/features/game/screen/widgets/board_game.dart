@@ -127,9 +127,9 @@ class _FieldWidget extends StatelessWidget {
   Widget? _getPlayer(int playerId) {
     switch (playerId) {
       case GameMechanism.player1:
-        return const CrossWidget();
+        return const CrossWidget(strokeWidth: 10.0,);
       case GameMechanism.player2:
-        return const CircleWidget();
+        return const CircleWidget(strokeWidth: 10.0,);
     }
     return null;
   }
