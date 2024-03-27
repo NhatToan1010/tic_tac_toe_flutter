@@ -65,10 +65,13 @@ class GameController extends GetxController {
   int getDataAt(int index) => boardGame[index];
 
   String? get currentPlayerMove {
-    if (currentPlayer.value == GameMechanism.player1) {
-      return "Player 1 Move";
-    } else if (currentPlayer.value == GameMechanism.player2) {
-      return isMultiplayer ? "Player 2 Move" : "Ai Move";
+    final _result = gameResult.value;
+    if (_result == GameMechanism.NOT_WINNER_YET) {
+      if (currentPlayer.value == GameMechanism.player1) {
+        return isMultiplayer ? "Player 1 Move" : "Player Move";
+      } else if (currentPlayer.value == GameMechanism.player2) {
+        return isMultiplayer ? "Player 2 Move" : "Ai Move";
+      }
     }
     return null;
   }
@@ -77,7 +80,7 @@ class GameController extends GetxController {
     final _result = gameResult.value;
     if (_result != GameMechanism.NOT_WINNER_YET) {
       if (_result == GameMechanism.player1) {
-        return "Player 1 Win";
+        return isMultiplayer ? "Player 1 Win" : "Player Win";
       } else if (_result == GameMechanism.player2) {
         return isMultiplayer ? "Player 2 Win" : "Ai Win";
       } else {
