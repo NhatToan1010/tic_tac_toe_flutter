@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'Tic Tac Toe',
       theme: MyTheme.lightTheme,
       darkTheme: MyTheme.darkTheme,
-      themeMode: ThemeMode.system,
+      themeMode: ThemeMode.light,
       home: const HomeScreen(),
       debugShowCheckedModeBanner: false,
     );
